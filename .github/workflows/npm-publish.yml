@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm install && npm test
+      - run: npm test
   publish-core-npm:
       environment: npm_token
       needs: build
