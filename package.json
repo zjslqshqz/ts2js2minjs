@@ -1,0 +1,41 @@
+{
+  "name": "ts2js2minjs",
+  "version": "1.0.0",
+  "description": "这是一个在编译 `.ts` 文件同时生成`.js`,`.min.js`的模块。",
+  "main": "index.js",
+  "scripts": {
+    "ts2js2minjs": "ts2js2minjs example/code.ts",
+    "test": "jest --verbose --no-cache"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "bin": {
+    "ts2js2minjs": "./bin/ts2js2minjs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjslqshqz/ts2js2minjs.git"
+  },
+  "keywords": [
+    "ts2js",
+    "ts2js2minjs",
+    "ts2minjs"
+  ],
+  "author": "zjslqshqz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zjslqshqz/ts2js2minjs/issues"
+  },
+  "homepage": "https://github.com/zjslqshqz/ts2js2minjs#readme",
+  "dependencies": {
+    "google-closure-compiler": "^20230502.0.0",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0"
+  }
+}
