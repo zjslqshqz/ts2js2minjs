@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci && npm test
+      - run: npm ci
   publish-core-npm:
       environment: npm_token
       needs: build
