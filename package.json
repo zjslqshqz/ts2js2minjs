@@ -1,6 +1,6 @@
 {
   "name": "ts2js2minjs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "这是一个在编译 `.ts` 文件同时生成`.js`,`.min.js`的模块。",
   "main": "index.js",
   "scripts": {
@@ -44,5 +44,10 @@
     "@babel/preset-env": "^7.21.5",
     "babel-jest": "^29.5.0",
     "jest": "^29.5.0"
+  },
+  "optionalDependencies": {
+    "google-closure-compiler-osx": "^20230502.0.0",
+    "google-closure-compiler-linux": "^20230502.0.0",
+    "google-closure-compiler-windows": "^20230502.0.0"
   }
 }
