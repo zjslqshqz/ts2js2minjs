@@ -22,7 +22,7 @@
 生成的文件都在 `ts` 文件的同级目录。
 
 ## ⚠️注意
-`google--closure--compiler` 原生文件,暂时不支持`arm`cpu 架构.
+`google--closure--compiler-linux` 原生文件,暂时不支持`arm`cpu 架构.
 
 ## 使用方法
 
