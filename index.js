@@ -1,9 +1,10 @@
 const path = require('path');
-const fs = require('fs');
+const { spawn } = require('child_process');
+const fs= require('fs');
 const tsc = require('typescript');
-const gcc_compiler = require('google-closure-compiler').compiler;
+const google_closure_compiler = require("./lib/google-closure-compiler");
 
-module.exports = (tsPath) => {
+module.exports = (tsPath,tsOptions) => {
 
     const tsSourcePath = path.basename(tsPath);
     const jsInput = path.basename(tsSourcePath, '.ts') + '.js';
@@ -16,12 +17,6 @@ module.exports = (tsPath) => {
     // 读取 ts 文件
     const tsContent = fs.readFileSync(tsSourcePath, 'utf8');
     console.log('正在编译 TypeScript 文件...');
-    const tsOptions = {
-        target: 'es6',
-        noImplicitAny: true,
-        sourceMap: true,
-        inlineSources: true
-    };
     try {
         const result = tsc.transpileModule(tsContent, {
             fileName:tsSourcePath,
@@ -36,22 +31,35 @@ module.exports = (tsPath) => {
     }
 
     // 编译 min.js
-    console.log('正在构建 min.js 和 map 文件...');
-    const closureCompiler = new gcc_compiler({
-        js: jsInput,
-        create_source_map: `${outputMinJsName}.map`,
-        output_wrapper: `"%output% //# sourceMappingURL=${outputMinJsName}.map"`,
-        warning_level: 'QUIET',
-        js_output_file: outputMinJsName,
+    // 获取 google_closure_compiler 模块和地址
+    const google_closure_compiler = require('./lib/google-closure-compiler');
+    const gcc_compiler = new google_closure_compiler();
+    const gcc_compiler_patch = gcc_compiler.installCmd()
+    console.log('开始构建 min.js 和 map 文件...');
+    const child = spawn(gcc_compiler_patch, [
+        '--js',
+        jsInput,
+        '--create_source_map',
+        `${outputMinJsName}.map`,
+        '--output_wrapper',
+        `%output% //# sourceMappingURL=${outputMinJsName}.map`,
+        '--warning_level',
+        'QUIET',
+        '--js_output_file',
+        outputMinJsName
+    ]);
+
+    child.stdout.on('data', (data) => {
+        console.log(`stdout: ${data}`);
     });
-    closureCompiler.run((exitCode, stdOut, stdErr) => {
-        //compilation complete
-        if (stdErr) {
-            console.error('构建失败：',stdErr);
-            process.exit(1);
-        } else {
-            console.log('构建完成！',stdOut);
-            process.exit(exitCode);
-        }
+
+    child.stderr.on('data', (data) => {
+        console.error(`构建失败: ${data}`);
+        process.exit(1);
+    });
+
+    child.on('close', (code) => {
+        console.log(`min.js map 文件 构建完成`);
+        process.exit(code);
     });
 };
