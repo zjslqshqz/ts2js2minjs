@@ -12,9 +12,9 @@
 
 本项目使用的 `google--closure--compiler` 二进制版本:
 
-[![npm](https://img.shields.io/badge/google--closure--compiler--osx-20230502.0.0-blue)](https://www.npmjs.com/package/google-closure-compiler-osx)
-[![npm](https://img.shields.io/badge/google--closure--compiler--windows-20230502.0.0-blue)](https://www.npmjs.com/package/google-closure-compiler-windows)
-[![npm](https://img.shields.io/badge/google--closure--compiler--linux-20230502.0.0-blue)](https://www.npmjs.com/package/google-closure-compiler-linux)
+[![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/google-closure-compiler-osx)](https://www.npmjs.com/package/google-closure-compiler-osx)
+[![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/google-closure-compiler-windows)](https://www.npmjs.com/package/google-closure-compiler-windows)
+[![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/google-closure-compiler-linux)](https://www.npmjs.com/package/google-closure-compiler-linux)
 
 
 这是一个在编译 `.ts` 文件同时生成`.js`,`.min.js`的模块。
