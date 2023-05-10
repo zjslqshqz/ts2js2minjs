@@ -41,8 +41,7 @@ if (argv.tsc_conf){
     let tsOptions = tsConfigPath
         ? merge(defTSOption, JSON.parse(readFileSync(tsConfigPath).toString()).compilerOptions)
         : defTSOption;
-    console.log(tsOptions)
-    // ts2js2minjs(tsPath,tsOptions);
+    ts2js2minjs(tsPath,tsOptions);
 }else {
     ts2js2minjs(tsPath,defTSOption);
 }
