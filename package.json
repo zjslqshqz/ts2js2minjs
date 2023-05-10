@@ -1,6 +1,6 @@
 {
   "name": "ts2js2minjs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "这是一个在编译 `.ts` 文件同时生成`.js`,`.min.js`的模块。",
   "main": "index.js",
   "scripts": {
