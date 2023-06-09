@@ -3,14 +3,16 @@
 [![npm](https://img.shields.io/badge/os-linux%20%7C%20darwin%20%7C%20%20win32-green)](https://www.npmjs.com/package/ts2js2minjs)
 [![npm](https://img.shields.io/node/v-lts/ts2js2minjs)](https://www.npmjs.com/package/ts2js2minjs)
 [![npm](https://img.shields.io/npm/v/ts2js2minjs)](https://www.npmjs.com/package/ts2js2minjs)
-
 [![npm](https://img.shields.io/npm/dw/ts2js2minjs)](https://www.npmjs.com/package/ts2js2minjs)
 
+本项目用于解决 ts 文件生成 min.js 的需求,生成顺序，`ts->js->min.js`
+
+# 依赖
 [![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/typescript)](https://www.npmjs.com/package/typescript)
 [![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/lodash)](https://www.npmjs.com/package/lodash)
 [![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/yargs)](https://www.npmjs.com/package/yargs)
 
-本项目使用的 `google--closure--compiler` 二进制版本:
+本项目使用的 `google-closure-compiler` 二进制版本:
 
 [![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/google-closure-compiler-osx)](https://www.npmjs.com/package/google-closure-compiler-osx)
 [![npm](https://img.shields.io/npm/dependency-version/ts2js2minjs/google-closure-compiler-windows)](https://www.npmjs.com/package/google-closure-compiler-windows)
