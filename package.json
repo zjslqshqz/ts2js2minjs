@@ -16,6 +16,14 @@
     "node": ">=16",
     "npm": ">=8"
   },
+  "files": [
+    "bin",
+    "example",
+    "lib",
+    "test",
+    "index.js",
+    "jest.config.js"
+  ],
   "bin": {
     "ts2js2minjs": "bin/ts2js2minjs.js"
   },
