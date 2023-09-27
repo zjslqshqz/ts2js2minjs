@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 import { spawnSync } from 'child_process';
 
 describe('run ts2js2minjs', () => {
@@ -10,19 +11,19 @@ describe('run ts2js2minjs', () => {
 
 describe('test build files', () => {
     test('check if file .js', () => {
-        expect(fs.existsSync('./example/code.js')).toBe(true);
+        expect(fs.existsSync(path.join('example','code.js'))).toBe(true);
     });
 
     test('check if file .js.map', () => {
-        expect(fs.existsSync('./example/code.js.map')).toBe(true);
+        expect(fs.existsSync(path.join('example','code.js.map'))).toBe(true);
     });
 
     test('check if file .min.js', () => {
-        expect(fs.existsSync('./example/code.min.js')).toBe(true);
+        expect(fs.existsSync(path.join('example','code.min.js'))).toBe(true);
     });
 
     test('check if file .min.js.map', () => {
-        expect(fs.existsSync('./example/code.min.js.map')).toBe(true);
+        expect(fs.existsSync(path.join('example','code.min.js.map'))).toBe(true);
     });
 
 });

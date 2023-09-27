@@ -1,10 +1,11 @@
 {
   "name": "ts2js2minjs",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "这是一个在编译 `.ts` 文件同时生成`.js`,`.min.js`的模块。",
   "main": "index.js",
   "scripts": {
     "ts2js2minjs": "bin/ts2js2minjs.js example/code.ts --tsc=ts.config.json",
+    "ts2js2minjs win32": "bin\\ts2js2minjs.js example\\code.ts --tsc=ts.config.json",
     "test": "jest --verbose --no-cache"
   },
   "os": [
@@ -22,7 +23,10 @@
     "lib",
     "test",
     "index.js",
-    "jest.config.js"
+    "jest.config.js",
+    ".babelrc",
+    "package.json",
+    "README.md"
   ],
   "bin": {
     "ts2js2minjs": "bin/ts2js2minjs.js"

@@ -2,7 +2,6 @@ const path = require('path');
 const { spawn } = require('child_process');
 const fs= require('fs');
 const tsc = require('typescript');
-const google_closure_compiler = require("./lib/google-closure-compiler");
 
 module.exports = (tsPath,tsOptions) => {
 
@@ -32,7 +31,7 @@ module.exports = (tsPath,tsOptions) => {
 
     // 编译 min.js
     // 获取 google_closure_compiler 模块和地址
-    const google_closure_compiler = require('./lib/google-closure-compiler');
+    const google_closure_compiler = require(path.join(__dirname,'lib','google-closure-compiler'));
     const gcc_compiler = new google_closure_compiler();
     const gcc_compiler_patch = gcc_compiler.installCmd()
     console.log('开始构建 min.js 和 map 文件...');
