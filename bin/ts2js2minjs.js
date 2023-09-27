@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const ts2js2minjs = require('../index');
 const path = require("path");
+const ts2js2minjs = require(path.join('..','index'));
 const { merge } = require('lodash');
 const yargs = require('yargs');
 const {readFileSync,existsSync} = require("fs");
